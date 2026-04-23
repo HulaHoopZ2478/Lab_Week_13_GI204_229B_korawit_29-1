@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     Rigidbody2D rb2d;
-    [SerializeField] float Speed;
+    public float speed;
     float move;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,6 +15,8 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         move = Input.GetAxis("Horizontal");
-        rb2d.linearVelocity = new Vector2(move * Speed, rb2d.linearVelocity.y);
-    }
+
+        rb2d.linearVelocity = new Vector2(move * speed, rb2d.linearVelocity.y);
+		Debug.Log(move);
+	}
 }
